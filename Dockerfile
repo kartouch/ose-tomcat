@@ -12,7 +12,6 @@ RUN curl -k http://apache.miloslavbrada.cz/tomcat/tomcat-8/v8.0.30/bin/apache-to
 
 EXPOSE 8080
 
-#ADD start.sh $CATALINA_HOME/bin/start-app.sh
 RUN groupadd tomcat -g 33
 RUN useradd tomcat -u 33 -g 33 -G tomcat
 RUN echo "tomcat:tomcat" | chpasswd
