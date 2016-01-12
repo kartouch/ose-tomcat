@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/rhel7                                                                                                                                                  [0/1
 
-RUN yum -y install java-1.8.0-openjdk.x86_64 unzip nss_wrapper gettext
+RUN yum -y install java-1.8.0-openjdk.x86_64 unzip
 
 ENV CATALINA_HOME /usr/local/tomcat
 
@@ -16,7 +16,7 @@ RUN groupadd tomcat -g 33
 RUN useradd tomcat -u 33 -g 33 -G tomcat
 RUN echo "tomcat:tomcat" | chpasswd
 RUN test "$(id tomcat)" = "uid=33(tomcat) gid=33(tomcat) groups=33(tomcat)"
-RUN chmod +x $CATALINA_HOME/bin/catalina.sh #&& chmod +x $CATALINA_HOME/bin/start-app.sh
+RUN chmod +x $CATALINA_HOME/bin/catalina.sh
 
  # Loosen permission bits to avoid problems running container with arbitrary UID
  RUN chown -R tomcat.0 $CATALINA_HOME
