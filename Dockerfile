@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhel7                                                                                                                                                  [0/1
+FROM registry.access.redhat.com/rhel7
 
 RUN yum -y install java-1.8.0-openjdk.x86_64 unzip
 
