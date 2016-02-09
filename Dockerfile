@@ -10,7 +10,7 @@ RUN mkdir -p "$CATALINA_HOME"
 
 RUN curl -k http://apache.miloslavbrada.cz/tomcat/tomcat-8/v8.0.30/bin/apache-tomcat-8.0.30.zip -o /tmp/tomcat-8.0.30.zip && cd /tmp && unzip tomcat-8.0.30.zip && mv apache-tomcat-8.0.30/* $CATALINA_HOME && rm tomcat-8.0.30.zip 
 
-EXPOSE 8080
+EXPOSE 8080 8443
 
 RUN groupadd tomcat -g 33
 RUN useradd tomcat -u 33 -g 33 -G tomcat
